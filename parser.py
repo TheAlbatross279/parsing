@@ -42,7 +42,6 @@ def tokenize(input_str, delims=[]):
 
 def removePunct(input_str, keep=[]):
     """removes all punctuation from the input except those specified by the keep list parameter."""
-    print string.punctuation
     delims = []
     for punct in keep:
         if punct in string.punctuation:
@@ -50,7 +49,6 @@ def removePunct(input_str, keep=[]):
     keep = delims
     regex = "[^A-Za-z0-9\s ^%s]" % "".join(keep)
     input_str = re.sub(regex, "",input_str)
-    print input_str
     return input_str
 
 
