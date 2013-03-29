@@ -5,7 +5,9 @@ import re
 
 def removeStopWords(input_str, rm_words=[]):
     """Removes stopwords defined by NLTK stopwords and removes words from input list, 
-    if parameter list is not empty. Method takes as input a list or string, which is split on spaces.""" 
+    if parameter list is not empty. 
+
+    Method takes as input a list or string, which is split on spaces.""" 
     filtered_msg = []
     #check if string, and split on spaces
     if isinstance(input_str, basestring):
@@ -17,7 +19,7 @@ def removeStopWords(input_str, rm_words=[]):
     return " ".join(filtered_msg)
 
 def normalize(input_str):
-    """Takes input and transforms to lower case"""
+    """Takes input and transforms to lower case."""
     filtered_input = []
     #check if string input
     if isinstance(input_str, basestring):
@@ -29,7 +31,8 @@ def normalize(input_str):
     return " ".join(filtered_input)
 
 def tokenize(input_str, delims=[]):
-    """takes in a string of input and tokenizes it into a list. 
+    """Takes in a string of input and tokenizes it into a list. 
+    
     By default, the string is split on whitespace characters if no delims are specified."""
     delims.append("\s")
     for delim in delims:
@@ -41,7 +44,7 @@ def tokenize(input_str, delims=[]):
     return input_str
 
 def removePunct(input_str, keep=[]):
-    """removes all punctuation from the input except those specified by the keep list parameter."""
+    """Removes all punctuation from the input except those specified by the keep list parameter."""
     delims = []
     for punct in keep:
         if punct in string.punctuation:
