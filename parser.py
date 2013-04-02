@@ -1,4 +1,5 @@
 from nltk.corpus import stopwords
+from nltk import pos_tag
 from nltk.tokenize import word_tokenize, RegexpTokenizer
 import string
 import re
@@ -54,6 +55,21 @@ def removePunct(input_str, keep=[]):
     input_str = re.sub(regex, "",input_str)
     return input_str
 
+def pos_tag (input_str, normal=False):
+    """
+    Tags each token in the string with a part-of-speech tag using NLTK POS-Tagger. 
+
+    If the optional normal flag is set, the method will normalize the input first before tagging it.
+    """
+    if isinstance(input_str, basestring):
+        #tokenize
+        input_str = tokenize(input_str)
+    if normal == True:
+        input_str = normalize(input_str)        
+
+    #tag
+    msg_tagged = pos_tag(input_str)
+    return msg_tagged
 
 
 str = "Hello, my name is the kim-bim. Who are you? Someone special?"
